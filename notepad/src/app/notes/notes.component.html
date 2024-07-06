@@ -1,0 +1,27 @@
+<div class="master">
+  <div class="note-input">
+    <h2>Let's keep some notes</h2>
+    <textarea [(ngModel)]="note" placeholder="here you can write notes"></textarea>
+    <button class="add-button" (click)="addNote()">Add Note</button>
+  </div>
+
+  <div class="saved-notes" *ngIf="savedNotes.length > 0">
+    <h2>Saved Notes</h2>
+    <ul>
+      <li *ngFor="let savedNote of savedNotes; let i = index">
+        <div class="note">
+          <textarea *ngIf="isEditing[i]" [(ngModel)]="savedNotes[i].content"></textarea>
+          <div *ngIf="!isEditing[i]">
+            {{ savedNote.content }}
+          </div>
+          <div class="note-buttons">
+            <button *ngIf="!isEditing[i]" class="edit-button" (click)="startEditing(i)">Edit</button>
+            <button *ngIf="isEditing[i]" class="save-button" (click)="saveEdit(i)">Save</button>
+            <button class="delete-button" (click)="deleteNote(i)">Delete</button>
+            <button *ngIf="isEditing[i]" class="cancel-button" (click)="cancelEdit(i)">Cancel</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

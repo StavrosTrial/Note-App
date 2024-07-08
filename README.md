@@ -12,3 +12,9 @@ NoteApp is a simple MEAN (MongoDB, Express, Angular, Node.js) stack application 
 * Express.js: Backend framework for Node.js.
 * Angular: Frontend framework for building the user interface.
 * Node.js: JavaScript runtime environment for the backend.
+
+## Instructions
+After you have forked this depository, in the project directory run 'npm install' to install all the dependencies.
+
+## Note
+The username and password credentials for the Mongoose connection in this project are placeholders and not for real use.
